@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Create meet link",
+  "version": "1.0",
+  "description": "Create meet link",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "identity"
+  ],
+  "action": {
+    "default_popup": "./html/popup.html"
+  },
+  "oauth2": {
+    "client_id": "526574817764-cqajsv9uckh5ir6ahs5rt0rgfoh4chvd.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar.events"
+    ]
+  }
+}
