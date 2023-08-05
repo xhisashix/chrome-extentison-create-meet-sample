@@ -1,13 +1,98 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Title</h1>
-  <button type="button" id="btn">Create Google Calendar Events</button>
-  <script src="../js/popup.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="p-3">
+      <h1>Create Google Meet Url</h1>
+      <div class="container">
+        <form action="">
+          <div class="mb-3">
+            <label for="" class="form-label">タイトル</label>
+            <input
+              type="text"
+              class="form-control"
+              name="title"
+              id="title"
+              aria-describedby="helpId"
+              placeholder=""
+            />
+            <small id="helpId" class="form-text text-muted"
+              >タイトルを入力してください</small
+            >
+          </div>
+          <div class="mb-3">
+            <div class="row">
+              <div class="col">
+                <label for="" class="form-label">開始</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  name="start_date"
+                  id="start_date"
+                  aria-describedby="helpId"
+                  placeholder=""
+                />
+                <small id="helpId" class="form-text text-muted"
+                  >開始日付を入力してください</small
+                >
+              </div>
+              <div class="col">
+                <label for="" class="form-label">開始時間</label>
+                <input
+                  type="time"
+                  class="form-control"
+                  name="start_time"
+                  id="start_time"
+                  aria-describedby="helpId"
+                  placeholder=""
+                />
+                <small id="helpId" class="form-text text-muted"
+                  >開始時間を入力してください</small
+                >
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="row">
+                <div class="col">
+                  <label for="" class="form-label">終了</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    name="end_date"
+                    id="end_date"
+                    aria-describedby="helpId"
+                    placeholder=""
+                  />
+                  <small id="helpId" class="form-text text-muted"
+                    >終了日付を入力してください</small
+                  >
+                </div>
+                <div class="col">
+                  <label for="" class="form-label">終了時間</label>
+                  <input
+                    type="time"
+                    class="form-control"
+                    name="end_time"
+                    id="end_time"
+                    aria-describedby="helpId"
+                    placeholder=""
+                  />
+                  <small id="helpId" class="form-text text-muted"
+                    >終了時間を入力してください</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" id="btn" class="btn btn-primary">Create</button>
+        </form>
+      </div>
+    </main>
+    <script src="../js/popup.js"></script>
+  </body>
 </html>

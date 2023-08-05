@@ -1,4 +1,5 @@
 import axios from "axios";
+import moment from "moment";
 import CONFIG from "./config";
 
 class GoogleCalenderEvent {
@@ -12,13 +13,13 @@ class GoogleCalenderEvent {
   public createEvent(eventDetail: any): Promise<string> {
     return new Promise((resolve: any, reject: any) => {
       interface EventData {
-        summary: string;
+        summary: Object;
         start: {
-          dateTime: string;
+          dateTime: Object;
           timeZone: string;
         };
         end: {
-          dateTime: string;
+          dateTime: Object;
           timeZone: string;
         };
         conferenceData: {
@@ -119,6 +120,19 @@ class GoogleCalenderEvent {
         }
       );
     });
+  }
+
+  /**
+   * @param {string} date
+   * @param {string} time
+   * @memberof GoogleCalenderEvent
+   * @description 時間のフォーマット
+   * @returns {string}
+   */
+  public formatTime(date: string, time: string): string {
+    const format = `${date} ${time}`;
+    const formatTime = moment(format).format();
+    return formatTime;
   }
 }
 

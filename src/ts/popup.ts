@@ -1,23 +1,39 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import GoogleCalenderEvent from "./googleCalenaderEvent";
+const googleCalenderEvent = new GoogleCalenderEvent();
 const btn = document.getElementById("btn");
-
-const eventDetail = {
-  title: "test",
-  start: "2023-08-15T09:00:00-07:00",
-  end: "2023-08-15T17:00:00-07:00",
-};
 
 if (btn) {
   btn.addEventListener("click", async () => {
-    const googleCalenderEvent = new GoogleCalenderEvent();
-    const calendarDetail: any = await googleCalenderEvent.createEvent(
-      eventDetail
+    const title = document.getElementById("title") as HTMLInputElement;
+    const start_date = document.getElementById(
+      "start_date"
+    ) as HTMLInputElement;
+    const start_time = document.getElementById(
+      "start_time"
+    ) as HTMLInputElement;
+    const end_date = document.getElementById("end_date") as HTMLInputElement;
+    const end_time = document.getElementById("end_time") as HTMLInputElement;
+    interface EventDetail {
+      title: string;
+      start: string;
+      end: string;
+    }
+    const eventDetail: EventDetail = { title: "", start: "", end: "" };
+
+    eventDetail.title = title.value;
+    eventDetail.start = googleCalenderEvent.formatTime(
+      start_date.value,
+      start_time.value
+    );
+    eventDetail.end = googleCalenderEvent.formatTime(
+      end_date.value,
+      end_time.value
     );
 
-    await googleCalenderEvent.deleteEvent(calendarDetail.calendarId);
+    console.log(eventDetail);
 
-    console.log(calendarDetail.meetUrl);
+    await googleCalenderEvent.createEvent(eventDetail);
   });
 }
