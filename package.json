@@ -4,11 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "googleapis": "^122.0.0"
+    "axios": "^1.4.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "googleapis": "^122.0.0",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webextension-polyfill-ts": "^0.26.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.243"
   }
 }
