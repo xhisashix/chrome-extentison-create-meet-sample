@@ -1,3 +1,5 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap";
 import GoogleCalenderEvent from "./googleCalenaderEvent";
 const btn = document.getElementById("btn");
 
@@ -10,7 +12,9 @@ const eventDetail = {
 if (btn) {
   btn.addEventListener("click", async () => {
     const googleCalenderEvent = new GoogleCalenderEvent();
-    const calendarDetail: any = await googleCalenderEvent.createEvent(eventDetail);
+    const calendarDetail: any = await googleCalenderEvent.createEvent(
+      eventDetail
+    );
 
     await googleCalenderEvent.deleteEvent(calendarDetail.calendarId);
 
