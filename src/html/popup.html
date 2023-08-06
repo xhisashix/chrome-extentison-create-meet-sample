@@ -10,89 +10,126 @@
     <main class="p-3">
       <h1>Create Google Meet Url</h1>
       <div class="container">
-        <form action="">
-          <div class="mb-3">
-            <label for="" class="form-label">タイトル</label>
-            <input
-              type="text"
-              class="form-control"
-              name="title"
-              id="title"
-              aria-describedby="helpId"
-              placeholder=""
-            />
-            <small id="helpId" class="form-text text-muted"
-              >タイトルを入力してください</small
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="navId" role="tablist">
+          <li class="nav-item">
+            <a
+              href="#tab1Id"
+              class="nav-link active"
+              data-bs-toggle="tab"
+              aria-current="page"
+              >Schedule</a
             >
-          </div>
-          <div class="mb-3">
-            <div class="row">
-              <div class="col">
-                <label for="" class="form-label">開始</label>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#tab2Id"
+              class="nav-link"
+              data-bs-toggle="tab"
+              aria-current="page"
+              >Meet url</a
+            >
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="tab1Id" role="tabpanel">
+            <form action="">
+              <div class="mb-3">
+                <label for="" class="form-label">タイトル</label>
                 <input
-                  type="date"
+                  type="text"
                   class="form-control"
-                  name="start_date"
-                  id="start_date"
+                  name="title"
+                  id="title"
                   aria-describedby="helpId"
                   placeholder=""
                 />
                 <small id="helpId" class="form-text text-muted"
-                  >開始日付を入力してください</small
+                  >タイトルを入力してください</small
                 >
               </div>
-              <div class="col">
-                <label for="" class="form-label">開始時間</label>
-                <input
-                  type="time"
-                  class="form-control"
-                  name="start_time"
-                  id="start_time"
-                  aria-describedby="helpId"
-                  placeholder=""
-                />
-                <small id="helpId" class="form-text text-muted"
-                  >開始時間を入力してください</small
-                >
-              </div>
-            </div>
-            <div class="mb-3">
-              <div class="row">
-                <div class="col">
-                  <label for="" class="form-label">終了</label>
-                  <input
-                    type="date"
-                    class="form-control"
-                    name="end_date"
-                    id="end_date"
-                    aria-describedby="helpId"
-                    placeholder=""
-                  />
-                  <small id="helpId" class="form-text text-muted"
-                    >終了日付を入力してください</small
-                  >
+              <div class="mb-3">
+                <div class="row">
+                  <div class="col">
+                    <label for="" class="form-label">開始</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      name="start_date"
+                      id="start_date"
+                      aria-describedby="helpId"
+                      placeholder=""
+                    />
+                    <small id="helpId" class="form-text text-muted"
+                      >開始日付を入力してください</small
+                    >
+                  </div>
+                  <div class="col">
+                    <label for="" class="form-label">開始時間</label>
+                    <input
+                      type="time"
+                      class="form-control"
+                      name="start_time"
+                      id="start_time"
+                      aria-describedby="helpId"
+                      placeholder=""
+                    />
+                    <small id="helpId" class="form-text text-muted"
+                      >開始時間を入力してください</small
+                    >
+                  </div>
                 </div>
-                <div class="col">
-                  <label for="" class="form-label">終了時間</label>
-                  <input
-                    type="time"
-                    class="form-control"
-                    name="end_time"
-                    id="end_time"
-                    aria-describedby="helpId"
-                    placeholder=""
-                  />
-                  <small id="helpId" class="form-text text-muted"
-                    >終了時間を入力してください</small
-                  >
+                <div class="mb-3">
+                  <div class="row">
+                    <div class="col">
+                      <label for="" class="form-label">終了</label>
+                      <input
+                        type="date"
+                        class="form-control"
+                        name="end_date"
+                        id="end_date"
+                        aria-describedby="helpId"
+                        placeholder=""
+                      />
+                      <small id="helpId" class="form-text text-muted"
+                        >終了日付を入力してください</small
+                      >
+                    </div>
+                    <div class="col">
+                      <label for="" class="form-label">終了時間</label>
+                      <input
+                        type="time"
+                        class="form-control"
+                        name="end_time"
+                        id="end_time"
+                        aria-describedby="helpId"
+                        placeholder=""
+                      />
+                      <small id="helpId" class="form-text text-muted"
+                        >終了時間を入力してください</small
+                      >
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+              <button type="button" id="btn" class="btn btn-primary">
+                Create
+              </button>
+            </form>
           </div>
-          <button type="button" id="btn" class="btn btn-primary">Create</button>
-        </form>
+          <div class="tab-pane fade" id="tab2Id" role="tabpanel">
+            <div class="alert alert-primary d-none" id="completeAlert" role="alert">
+              <h4 class="alert-heading">Complete!</h4>
+              <p id="meetUrl"></p>
+              <button class="btn btn-warning" id="copyBtn">コピー</button>
+            </div>
+            <button type="button" class="btn btn-primary" id="createUrl">Create Meet Url</button>
+          </div>
+        </div>
       </div>
     </main>
-    <script src="../js/popup.js"></script>
+    <script defer src="../js/popup.js"></script>
   </body>
 </html>
